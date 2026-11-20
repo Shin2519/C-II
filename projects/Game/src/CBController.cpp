@@ -18,6 +18,7 @@ namespace
 
     Color colorTable[] =
     {
+        //色の変更
         Color(1, 1, 1),
         Color(1, 1, 0),
         Color(1, 0, 1),
@@ -25,6 +26,7 @@ namespace
         Color(0.5, 0, 0),
         Color(0, 0.5, 0),
         Color(0, 0, 0.5),
+        Color(1, 0.5, 0),
     };
     constexpr int tableSize = sizeof(colorTable) / sizeof(Color);
 }
