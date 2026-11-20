@@ -12,6 +12,7 @@ namespace
     struct CBParam // register(b0)
     {
         Color baseColor;
+
     };
     constexpr int CBSlot = 0;
 
@@ -37,6 +38,9 @@ void CBController::Start()
     desc.CPUAccessFlags = 0;
     desc.Usage = D3D11_USAGE_DEFAULT;
 
+    //追加文
+    
+
     // 定数バッファを確保
     D3DManager::getInstance()->GetDevice()->CreateBuffer(&desc, nullptr, constantBuffer.GetAddressOf());
 }
@@ -45,6 +49,11 @@ void CBController::Start()
 void CBController::Update()
 {
     if(Input::GetKeyDown(Keyboard::Down))
+    {
+        colorIndex = (colorIndex + 1) % tableSize;
+    }
+
+    if (Input::GetKeyDown(Keyboard::Right))
     {
         colorIndex = (colorIndex + 1) % tableSize;
     }
